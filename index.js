@@ -3,7 +3,7 @@ const app = express();
 
 // route handler
 app.get('/', (req, res) => {
-  res.send({Hi: 'there'}); // JSON
+  res.send({Hi: 'there, deployed again!'}); // JSON
 });
 
 const PORT = process.env.PORT || 5000;
