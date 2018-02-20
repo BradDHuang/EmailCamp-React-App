@@ -27,7 +27,11 @@ passport.use(
 		{
 			clientID: keys.googleClientID,
 			clientSecret: keys.googleClientSecret,
-			callbackURL: '/auth/google/callback'
+			callbackURL: '/auth/google/callback',
+			proxy: true
+			// true means proxy is trusted, eg. http//: is ok.
+			// Browser -> Heroku Proxy -> Our Server @Heroku
+			// Proxy act as the "Load Balancer"
 		},
 		(accessToken, refreshToken, profile, done) => {
 			// Promise is used below.
