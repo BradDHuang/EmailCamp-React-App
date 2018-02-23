@@ -9,12 +9,19 @@ module.exports = app => {
 	);
 	// 'google' is the internal identifier for using GoogleStrategy.
 	// scope is access scope.
-	app.get('/auth/google/callback', passport.authenticate('google'));
+	app.get(
+		'/auth/google/callback',
+		passport.authenticate('google'),
+		(req, res) => {
+			res.redirect('/surveys');
+		}
+	);
 
 	app.get('/api/logout', (req, res) => {
 		req.logout();
-		res.send(req.user);
+		// res.send(req.user);
 		// console.log('You are logged out');
+		res.redirect('/');
 	});
 
 	app.get('/api/current_user', (req, res) => {

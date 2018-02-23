@@ -33,19 +33,16 @@ passport.use(
 			// Browser -> Heroku Proxy -> Our Server @Heroku
 			// Proxy act as the "Load Balancer"
 		},
-		(accessToken, refreshToken, profile, done) => {
+		async (accessToken, refreshToken, profile, done) => {
 			// Promise is used below.
-			User.findOne({ googleId: profile.id }).then(existingUser => {
-				if (existingUser) {
-					done(null, existingUser);
-					// null means no err.
-				} else {
-					new User({ googleId: profile.id })
-						.save()
-						.then(user => done(null, user));
-					// save to DB.
-				}
-			});
+			const existingUser = await User.findOne({ googleId: profile.id });
+			if (existingUser) {
+				return done(null, existingUser);
+				// null means no err.
+			}
+			const user = await new User({ googleId: profile.id }).save();
+			done(null, user);
+			// save to DB.
 			// console.log('at', accessToken);
 			// console.log('rt', refreshToken);
 			// console.log('pf', profile);
