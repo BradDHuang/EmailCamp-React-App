@@ -6,8 +6,10 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 // require('./services/passport');
 require('./models/User');
+require('./models/Survey');
 require('./services/passport'); // passport uses models.
 
+mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
 
 const app = express();
@@ -32,6 +34,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 // returns a func.
 
 if (process.env.NODE_ENV === 'production') {
