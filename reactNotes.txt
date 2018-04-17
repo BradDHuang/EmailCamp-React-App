@@ -1,0 +1,81 @@
+pro. repo.: https://goo.gl/Xv4ZgB
+
+https://stackoverflow.com/questions/39632667/how-to-kill-a-currently-using-port-on-localhost-in-windows
+netstat -ano | findstr :yourPortNumber
+taskkill /PID typeyourPIDhere /F
+
+https://www.npmjs.com/package/redux-thunk
+Redux Thunk middleware 
+allows you to write action creators that return a function instead of an action. 
+The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. 
+The inner function receives the store methods dispatch and getState as parameters.
+
+componentDidMount() is invoked immediately after a component is mounted. 
+Initialization that requires DOM nodes should go here. 
+If you need to load data from a remote endpoint, this is a good place to instantiate the network request.
+
+in Chrome Console (JS):
+'' returns ""
+!'' returns true
+!!'' returns false
+
+[mapStateToProps(state, [ownProps]): stateProps] (Function): 
+If this argument is specified, the new component will subscribe to Redux store updates. 
+This means that any time the store is updated, mapStateToProps will be called. 
+The results of mapStateToProps must be a plain object, which will be merged into the component’s props. 
+If you don't want to subscribe to store updates, pass null or undefined in place of mapStateToProps.
+
+Note: You must create custom environment variables beginning with REACT_APP_
+eg. REACT_APP_SECRET_CODE=abcdef
+
+body-parser, Node.js body parsing middleware.
+Parse incoming request bodies in a middleware before your handlers, 
+available under the req.body property.
+
+The typeof operator can return one of these primitive types (JS):
+string. number. boolean. undefined.
+
+With super(), the superclass no-argument constructor is called.
+
+async / await
+The await operator is used to wait for a Promise. It can only be used inside an async function.
+The await expression causes async function execution to pause 
+until  a Promise is fulfilled, that is resolved or rejected, 
+and to resume execution of the async function after fulfillment. 
+When resumed, the value of the await expression is that of the fulfilled Promise.
+
+422 Unprocessable Entity 
+The request was well-formed but was unable to be followed due to semantic errors.
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+http://emailregex.com
+
+Access form values with variable names:
+eg. var vPriceInput = form[vPrice]; // instead of var vPriceInput = form.vPrice;
+
+history / withRouter
+You can get access to the history object’s properties 
+and the closest <Route>'s match via the withRouter higher-order component. 
+withRouter will pass updated match, location, and history props to the wrapped component whenever it renders.
+
+webhook
+A webhook in web development is a method of augmenting or altering the behaviour of a web page, 
+or web application, with custom callbacks. These callbacks may be maintained, modified, and managed 
+by third-party users and developers who may not necessarily be affiliated with the originating website or application. 
+
+Localtunnel 
+allows you to easily share a web service on your local development machine 
+without messing with DNS and firewall settings.
+
+lodash, _.chain(value)
+Creates a lodash wrapper instance that wraps value with explicit method chain sequences enabled. 
+
+Use the method isEmail() from package validator to validate an email address:
+const validator = require('validator');
+validator.isEmail(email);
+
+Ctrl + F (Chrome):
+search keyword.
+
+http://materializecss.com/cards.html
+
